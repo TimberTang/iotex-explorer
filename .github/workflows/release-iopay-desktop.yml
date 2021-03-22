@@ -81,7 +81,7 @@ jobs:
         run: |
           for i in `ls src/electron/dist/`
           do
-              aws --endpoint-url="${S3_ENDPOINT}" s3 cp src/electron/dist/$i s3://${S3_BUCKET}/
+              console.log(i)
           done
         env:
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
