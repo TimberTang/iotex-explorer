@@ -66,7 +66,6 @@ jobs:
         run: |
           for i in `ls src/electron/dist/`
           do
-              console.log(i)
               aws --endpoint-url="${S3_ENDPOINT}" s3 cp src/electron/dist/$i s3://${S3_BUCKET}/
           done
         env:
